@@ -11,14 +11,14 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    var assetsImage = new AssetImage('komos_logo.png');
+    var assetsImage = new AssetImage('assets/images/komos_logo_130_130.png');
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.only(top: 180),
         //color: Colors.grey[800],
         child: ListView(
           children: <Widget>[
-            Image(image: assetsImage, width: 48.0, height: 48.0),
+            Image(image: assetsImage, width: 250.0, height: 250.0),
             /*DecoratedBox(
               decoration: BoxDecoration(
                 image: DecorationImage(
