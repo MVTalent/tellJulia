@@ -9,7 +9,10 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
-  final int _splashDuration = 3;
+  //TODO вынести в класс настроек
+  final int _splashDuration = 5;
+  final AssetImage komosLogo = AssetImage('assets/images/komos_logo_400.jpg');
+  final AssetImage woman = AssetImage('assets/images/woman_1024.png');
 
   startSplashScreenTimer() async {
     return Timer(Duration(seconds: _splashDuration), () {
@@ -25,10 +28,35 @@ class _SplashPageState extends State<SplashPage> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new Container(
-        child: Center(
-          child: Text("Заставка"),
+    return Scaffold(
+      body: Container(
+        color: Colors.green,
+        child: ListView(
+          children: <Widget>[
+            Container(
+              padding: EdgeInsets.only(top: 80, bottom: 30),
+              child: Center(
+                child: Image(image: komosLogo, width: 150.0, height: 150.0),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.only(bottom: 30),
+              child: Center(
+                child: Image(image: woman, width: 150.0, height: 150.0),
+              ),
+            ),
+            Container(
+              child: Center(
+                child: Text(
+                  "TellJulia",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 35,
+                      fontWeight: FontWeight.w500),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

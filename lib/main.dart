@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:tell_julia/page/about_page.dart';
+import 'package:tell_julia/page/done_page.dart';
 import 'package:tell_julia/page/home_page.dart';
 import 'package:tell_julia/page/login_page.dart';
+import 'package:tell_julia/page/register_page.dart';
+import 'package:tell_julia/page/restore_page.dart';
 import 'package:tell_julia/page/splash_page.dart';
 
 void main() => runApp(MyApp());
@@ -13,7 +17,7 @@ class MyApp extends StatelessWidget {
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'tellJuila',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         hintColor: Colors.white,
@@ -28,6 +32,10 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/LoginPage': (BuildContext context) => LoginPage(),
         '/HomePage': (BuildContext context) => HomePage(),
+        '/AboutPage': (BuildContext context) => AboutPage(),
+        '/RestorePage': (BuildContext context) => RestorePage(),
+        '/RegisterPage': (BuildContext context) => RegisterPage(),
+        '/DonePage': (BuildContext context) => DonePage(),
       },
     );
   }
