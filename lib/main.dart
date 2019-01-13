@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         '/AboutPage': (BuildContext context) => AboutPage(),
         '/RestorePage': (BuildContext context) => RestorePage(),
         '/RegisterPage': (BuildContext context) => RegisterPage(),
-        '/DonePage': (BuildContext context) => DonePage(),
+        '/DonePage': (BuildContext context) => DonePage(message: ""),
       },
     );
   }

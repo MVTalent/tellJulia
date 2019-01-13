@@ -30,7 +30,7 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.green,
+        color: Colors.white,
         child: ListView(
           children: <Widget>[
             Container(
@@ -50,7 +50,7 @@ class _SplashPageState extends State<SplashPage> {
                 child: Text(
                   "TellJulia",
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.green,
                       fontSize: 35,
                       fontWeight: FontWeight.w500),
                 ),

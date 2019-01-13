@@ -12,53 +12,59 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final Color textColor = Colors.white;
+    final AssetImage apple =
+        AssetImage('assets/images/apple_with_big_bite.png');
+    final AssetImage egg = AssetImage('assets/images/eggs.png');
+
     return Scaffold(
       body: Container(
         color: Colors.green,
-        child: ListView(
+        child: Column(
           children: <Widget>[
-            Row(
-              children: <Widget>[
-                FlatButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext context) => AboutPage()));
-                  },
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        Icons.star,
-                        color: textColor,
-                        size: 15,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: textColor,
-                        size: 15,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: textColor,
-                        size: 15,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: textColor,
-                        size: 15,
-                      ),
-                      Icon(
-                        Icons.star,
-                        color: textColor,
-                        size: 15,
-                      ),
-                    ],
+            Container(
+              padding: EdgeInsets.only(top: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  FlatButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => AboutPage()));
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.star,
+                          color: textColor,
+                          size: 15,
+                        ),
+                        Icon(
+                          Icons.star,
+                          color: textColor,
+                          size: 15,
+                        ),
+                        Icon(
+                          Icons.star,
+                          color: textColor,
+                          size: 15,
+                        ),
+                        Icon(
+                          Icons.star,
+                          color: textColor,
+                          size: 15,
+                        ),
+                        Icon(
+                          Icons.star,
+                          color: textColor,
+                          size: 15,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: FlatButton(
+                  FlatButton(
                     onPressed: () {
                       Navigator.push(
                           context,
@@ -76,56 +82,107 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                ),
-                FlatButton(
-                  onPressed: () {
-                    Navigator.of(context).pushReplacementNamed('/LoginPage');
-                  },
-                  color: Colors.green,
-                  textColor: Colors.white,
-                  padding: EdgeInsets.all(10.0),
-                  child: Row(
-                    children: <Widget>[Icon(Icons.exit_to_app), Text("Выйти")],
+                  FlatButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacementNamed('/LoginPage');
+                    },
+                    color: Colors.green,
+                    textColor: Colors.white,
+                    padding: EdgeInsets.all(10.0),
+                    child: Row(
+                      children: <Widget>[
+                        Icon(Icons.exit_to_app),
+                        Text("Выйти")
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Expanded(
+              child: ButtonTheme(
+                minWidth: double.infinity,
+                child: FlatButton(
+                  onPressed: () => {},
+                  color: Colors.white,
+                  textColor: Colors.green,
+                  //padding: EdgeInsets.all(10.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Icon(
+                        FontAwesomeIcons.thumbsUp,
+                        size: 80,
+                      ),
+                      Text(
+                        "Благодарность",
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.w300),
+                      )
+                    ],
                   ),
                 ),
-              ],
+              ),
             ),
-            Container(
-              child: FlatButton(
-                onPressed: () => {},
-                color: Colors.white,
-                textColor: Colors.green,
-                padding: EdgeInsets.all(10.0),
-                child: Column(
-                  children: <Widget>[
-                    Icon(Icons.thumb_up),
-                    Text("Благодарность")
-                  ],
+            Divider(
+              height: 5,
+              color: Colors.green,
+            ),
+            Expanded(
+              child: ButtonTheme(
+                minWidth: double.infinity,
+                child: FlatButton(
+                  onPressed: () => {},
+                  color: Colors.white,
+                  textColor: Colors.green,
+                  //padding: EdgeInsets.all(10.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Image(
+                        image: egg,
+                        width: 80.0,
+                        height: 80.0,
+                        color: Colors.green,
+                      ),
+                      Text(
+                        "НЕидеальная полка",
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.w300),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-            Container(
-              child: FlatButton(
-                onPressed: () => {},
-                color: Colors.white,
-                textColor: Colors.green,
-                padding: EdgeInsets.all(10.0),
-                child: Column(
-                  children: <Widget>[
-                    Icon(Icons.add),
-                    Text("НЕидеальная полка")
-                  ],
-                ),
-              ),
+            Divider(
+              height: 5,
+              color: Colors.green,
             ),
-            Container(
-              child: FlatButton(
-                onPressed: () => {},
-                color: Colors.white,
-                textColor: Colors.green,
-                padding: EdgeInsets.all(10.0),
-                child: Column(
-                  children: <Widget>[Icon(Icons.add), Text("Дефект продукта")],
+            Expanded(
+              child: ButtonTheme(
+                minWidth: double.infinity,
+                child: FlatButton(
+                  onPressed: () => {},
+                  color: Colors.white,
+                  textColor: Colors.green,
+                  //padding: EdgeInsets.all(10.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      Image(
+                        image: apple,
+                        width: 80.0,
+                        height: 80.0,
+                        color: Colors.green,
+                      ),
+                      Text(
+                        "Дефект продукта",
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.w300),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -151,8 +208,8 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
-                /*Expanded(
-                  child: */FlatButton(
+                Expanded(
+                  child: FlatButton(
                     onPressed: () {
                       Navigator.of(context).pushReplacementNamed('/LoginPage');
                     },
@@ -166,7 +223,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                //),
+                ),
               ],
             ),
           ],
