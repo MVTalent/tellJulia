@@ -9,18 +9,24 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final AssetImage woman = AssetImage('assets/images/woman_1024.png');
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(top: 180),
+        padding: EdgeInsets.only(top: 30),
         color: Colors.green,
         child: ListView(
           children: <Widget>[
             Container(
+              padding: EdgeInsets.only(bottom: 30),
+              child: Center(
+                child: Image(image: woman, width: 150.0, height: 150.0),
+              ),
+            ),
+            Container(
               margin: EdgeInsets.only(left: 40.0, right: 40.0),
-              alignment: Alignment.center,
               decoration: BoxDecoration(
                 border: Border(
                   bottom: BorderSide(
@@ -31,8 +37,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
               padding: EdgeInsets.only(left: 0.0, right: 10.0),
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Padding(
                     padding:
@@ -58,7 +62,6 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Container(
               margin: EdgeInsets.only(left: 40.0, right: 40.0, top: 10.0),
-              alignment: Alignment.center,
               decoration: BoxDecoration(
                 border: Border(
                   bottom: BorderSide(
@@ -69,8 +72,6 @@ class _LoginPageState extends State<LoginPage> {
               ),
               padding: EdgeInsets.only(left: 0.0, right: 10.0),
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Padding(
                     padding:
@@ -97,7 +98,6 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Container(
               margin: EdgeInsets.only(left: 40.0, right: 40.0, top: 50.0),
-              alignment: Alignment.center,
               child: Row(
                 children: <Widget>[
                   Expanded(
@@ -124,15 +124,13 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Container(
               margin: EdgeInsets.only(left: 40.0, right: 40.0, top: 20),
-              alignment: Alignment.center,
               child: Row(
                 children: <Widget>[
                   Expanded(
                     child: FlatButton(
                       onPressed: () {
                         SystemChannels.textInput.invokeMethod('TextInput.hide');
-                        Navigator.of(context)
-                            .pushNamed('/RestorePage');
+                        Navigator.of(context).pushNamed('/RestorePage');
                       },
                       child: Text(
                         "Забыли пароль?",
@@ -144,8 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: FlatButton(
                       onPressed: () {
                         SystemChannels.textInput.invokeMethod('TextInput.hide');
-                        Navigator.of(context)
-                            .pushNamed('/RegisterPage');
+                        Navigator.of(context).pushNamed('/RegisterPage');
                       },
                       child: Text(
                         "Еще нет аккаунта?",

@@ -20,6 +20,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   font_awesome_flutter: ^8.2.0
+  flutter_map: ^0.4.0
+  location: ^1.4.1
 
 dev_dependencies:
   flutter_test:
@@ -47,6 +49,12 @@ flutter:
     - assets/images/woman_1024.png
     - assets/images/apple_with_big_bite.png
     - assets/images/eggs.png
+    - assets/images/review_1.png
+    - assets/images/apple.png
+    - assets/images/fish.png
+    - assets/images/mail.png
+    - assets/images/new_email.png
+    - assets/images/logout.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.

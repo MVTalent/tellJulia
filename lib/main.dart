@@ -3,9 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:tell_julia/page/about_page.dart';
 import 'package:tell_julia/page/done_page.dart';
 import 'package:tell_julia/page/home_page.dart';
-import 'package:tell_julia/page/login_page.dart';
-import 'package:tell_julia/page/register_page.dart';
-import 'package:tell_julia/page/restore_page.dart';
+import 'package:tell_julia/page/auth/login_page.dart';
+import 'package:tell_julia/page/auth/register_page.dart';
+import 'package:tell_julia/page/auth/restore_page.dart';
 import 'package:tell_julia/page/splash_page.dart';
 
 void main() => runApp(MyApp());
