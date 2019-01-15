@@ -8,7 +8,7 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: backColor,
+        color: Color(0xFF1A9F4B),
         child: ListView(
           children: <Widget>[
             Row(

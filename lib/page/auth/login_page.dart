@@ -9,20 +9,20 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final AssetImage woman = AssetImage('assets/images/woman_1024.png');
+  final AssetImage woman = AssetImage('assets/images/woman_transparent.png');
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 30),
-        color: Colors.green,
+        color: Color(0xFF1A9F4B),
         child: ListView(
           children: <Widget>[
             Container(
               padding: EdgeInsets.only(bottom: 30),
               child: Center(
-                child: Image(image: woman, width: 150.0, height: 150.0),
+                child: Image(image: woman, width: 200.0, height: 200.0),
               ),
             ),
             Container(
@@ -104,15 +104,15 @@ class _LoginPageState extends State<LoginPage> {
                     child: SizedBox(
                       height: 50,
                       child: OutlineButton(
+                        borderSide: BorderSide(width: 3.5, color: Colors.white),
                         child: Text("ВОЙТИ",
-                            style: TextStyle(fontWeight: FontWeight.w700)),
+                            style: TextStyle(fontWeight: FontWeight.w700, color: Colors.white)),
                         onPressed: () {
                           SystemChannels.textInput
                               .invokeMethod('TextInput.hide');
                           Navigator.of(context)
                               .pushReplacementNamed('/HomePage');
                         },
-                        textColor: Colors.white,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0),
                         ),

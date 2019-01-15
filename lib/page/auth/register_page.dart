@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:tell_julia/components/button/custom_outline_button.dart';
 import 'package:tell_julia/page/done_page.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -9,7 +10,7 @@ class RegisterPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 180),
-        color: Colors.green,
+        color: Color(0xFF1A9F4B),
         child: ListView(
           children: <Widget>[
             Container(

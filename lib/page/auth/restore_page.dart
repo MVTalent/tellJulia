@@ -10,7 +10,7 @@ class RestorePage extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 180),
-        color: Colors.green,
+        color: Color(0xFF1A9F4B),
         child: ListView(
           children: <Widget>[
             Container(

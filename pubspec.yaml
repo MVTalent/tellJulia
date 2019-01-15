@@ -45,6 +45,7 @@ flutter:
   #  - images/a_dot_ham.jpeg
   assets:
     - assets/images/komos_logo_400.jpg
+    - assets/images/komos_logo_400_1.png
     - assets/images/business_woman_512.png
     - assets/images/woman_1024.png
     - assets/images/apple_with_big_bite.png
@@ -55,6 +56,13 @@ flutter:
     - assets/images/mail.png
     - assets/images/new_email.png
     - assets/images/logout.png
+    - assets/images/wheat.jpg
+    - assets/images/girl.png
+    - assets/images/woman_transparent.png
+    - assets/images/chicken_eggs_1728x800.jpg
+    - assets/images/apples_1024x640.jpg
+    - assets/images/flowers.jpg
+    - assets/images/red_apple_between_green.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
