@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:tell_julia/common/colors/common_colors.dart';
+import 'package:tell_julia/common/images/common_images.dart';
+import 'package:tell_julia/components/buttons/custom_outline_button.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -9,20 +12,20 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final AssetImage woman = AssetImage('assets/images/woman_transparent.png');
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 30),
-        color: Color(0xFF1A9F4B),
+        color: CommonColors.commonBackgroundColor,
         child: ListView(
           children: <Widget>[
             Container(
               padding: EdgeInsets.only(bottom: 30),
               child: Center(
-                child: Image(image: woman, width: 200.0, height: 200.0),
+                child: Image(
+                    image: CommonImages.woman, width: 200.0, height: 200.0),
               ),
             ),
             Container(
@@ -103,20 +106,9 @@ class _LoginPageState extends State<LoginPage> {
                   Expanded(
                     child: SizedBox(
                       height: 50,
-                      child: OutlineButton(
-                        borderSide: BorderSide(width: 3.5, color: Colors.white),
-                        child: Text("ВОЙТИ",
-                            style: TextStyle(fontWeight: FontWeight.w700, color: Colors.white)),
-                        onPressed: () {
-                          SystemChannels.textInput
-                              .invokeMethod('TextInput.hide');
-                          Navigator.of(context)
-                              .pushReplacementNamed('/HomePage');
-                        },
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0),
-                        ),
-                      ),
+                      child: CustomOutlineButton('ВОЙТИ', () {
+                        Navigator.of(context).pushReplacementNamed('/HomePage');
+                      }),
                     ),
                   ),
                 ],
@@ -133,7 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.of(context).pushNamed('/RestorePage');
                       },
                       child: Text(
-                        "Забыли пароль?",
+                        'Забыли пароль?',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
@@ -145,7 +137,7 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.of(context).pushNamed('/RegisterPage');
                       },
                       child: Text(
-                        "Еще нет аккаунта?",
+                        'Еще нет аккаунта?',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),

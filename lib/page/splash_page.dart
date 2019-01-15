@@ -1,8 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:transparent_image/transparent_image.dart';
+import 'package:tell_julia/common/images/common_images.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -12,8 +11,7 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   //TODO вынести в класс настроек
   final int _splashDuration = 5;
-  final AssetImage komosLogo = AssetImage('assets/images/komos_logo_400_1.png');
-  final AssetImage woman = AssetImage('assets/images/woman_transparent.png');
+
 
   startSplashScreenTimer() async {
     return Timer(Duration(seconds: _splashDuration), () {
@@ -33,7 +31,7 @@ class _SplashPageState extends State<SplashPage> {
       body: Container(
         decoration: new BoxDecoration(
           image: new DecorationImage(
-            image: new AssetImage("assets/images/wheat.jpg"),
+            image: CommonImages.wheat,
             fit: BoxFit.cover,
           ),
         ),
@@ -42,19 +40,19 @@ class _SplashPageState extends State<SplashPage> {
             Container(
               padding: EdgeInsets.only(top: 80),
               child: Center(
-                child: Image(image: komosLogo, width: 200.0, height: 200.0),
+                child: Image(image: CommonImages.komosLogo, width: 200.0, height: 200.0),
               ),
             ),
             Container(
               padding: EdgeInsets.only(bottom: 30),
               child: Center(
-                child: Image(image: woman, width: 200.0, height: 200.0),
+                child: Image(image: CommonImages.woman, width: 200.0, height: 200.0),
               ),
             ),
             Container(
               child: Center(
                 child: Text(
-                  "TellJulia",
+                  'TellJulia',
                   style: TextStyle(
                       color: Color(0xFF1A9F4B),
                       fontSize: 40,

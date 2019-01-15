@@ -71,7 +71,7 @@ class _MapPageState extends State<MapPage> {
         : Scaffold(
             appBar: AppBar(
                 title: Text(
-                  "Карта",
+                  'Карта',
                   style: TextStyle(fontWeight: FontWeight.w300),
                 ),
                 backgroundColor: Colors.green),
@@ -80,21 +80,21 @@ class _MapPageState extends State<MapPage> {
               children: <Widget>[
                 FlutterMap(
                   options: MapOptions(
-                      center: LatLng(_currentLocation["latitude"],
-                          _currentLocation["longitude"]),
+                      center: LatLng(_currentLocation['latitude'],
+                          _currentLocation['longitude']),
                       minZoom: 10.0),
                   layers: [
                     TileLayerOptions(
                         urlTemplate:
-                            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                            'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                         subdomains: ['a', 'b', 'c']),
                     MarkerLayerOptions(
                       markers: [
                         Marker(
                           width: 45.0,
                           height: 45.0,
-                          point: LatLng(_currentLocation["latitude"],
-                              _currentLocation["longitude"]),
+                          point: LatLng(_currentLocation['latitude'],
+                              _currentLocation['longitude']),
                           builder: (context) => Container(
                                 child: IconButton(
                                   icon: Icon(Icons.location_on),

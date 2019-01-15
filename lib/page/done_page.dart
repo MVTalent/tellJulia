@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:tell_julia/common/colors/common_colors.dart';
+import 'package:tell_julia/common/images/common_images.dart';
+import 'package:tell_julia/components/buttons/custom_outline_button.dart';
 
 class DonePage extends StatelessWidget {
   final String message;
@@ -8,10 +10,9 @@ class DonePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AssetImage woman = AssetImage('assets/images/woman_1024.png');
     return Scaffold(
       body: Container(
-        color: Colors.green,
+        color: CommonColors.commonBackgroundColor,
         child: ListView(
           children: <Widget>[
             /* Container(
@@ -23,12 +24,12 @@ class DonePage extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(top: 100, bottom: 30),
               child: Center(
-                child: Image(image: woman, width: 150.0, height: 150.0),
+                child: Image(image: CommonImages.woman, width: 150.0, height: 150.0),
               ),
             ),
             Container(
               child: Text(
-                "TellJulia",
+                'TellJulia',
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 35,
@@ -56,20 +57,10 @@ class DonePage extends StatelessWidget {
                   Expanded(
                     child: SizedBox(
                       height: 50,
-                      child: OutlineButton(
-                        child: Text("ГОТОВО",
-                            style: TextStyle(fontWeight: FontWeight.w700)),
-                        onPressed: () {
-                          SystemChannels.textInput
-                              .invokeMethod('TextInput.hide');
-                          Navigator.of(context)
-                              .pushReplacementNamed('/LoginPage');
-                        },
-                        textColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0),
-                        ),
-                      ),
+                      child: CustomOutlineButton('ГОТОВО', () {
+                        Navigator.of(context)
+                            .pushReplacementNamed('/LoginPage');
+                      }),
                     ),
                   ),
                 ],
@@ -79,6 +70,5 @@ class DonePage extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

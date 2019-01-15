@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tell_julia/common/colors/common_colors.dart';
+import 'package:tell_julia/common/images/common_images.dart';
 import 'package:tell_julia/page/about_page.dart';
 import 'package:tell_julia/page/feedback/non_ideal_shelf_page.dart';
 import 'package:tell_julia/page/feedback/product_defect_page.dart';
@@ -11,17 +13,12 @@ import 'package:tell_julia/page/maps/map_page.dart';
 }*/
 class HomePage extends StatelessWidget {
   final Color textColor = Colors.white;
-  final AssetImage apple = AssetImage('assets/images/apple.png');
-  final AssetImage egg = AssetImage('assets/images/eggs.png');
-  final AssetImage review = AssetImage('assets/images/review_1.png');
-  final AssetImage mail = AssetImage('assets/images/new_email.png');
-  final AssetImage logout = AssetImage('assets/images/logout.png');
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color(0xFF1A9F4B),
+        color: CommonColors.commonBackgroundColor,
         child: Column(
           children: <Widget>[
             Container(
@@ -76,7 +73,7 @@ class HomePage extends StatelessWidget {
                     child: Row(
                       children: <Widget>[
                         Image(
-                          image: logout,
+                          image: CommonImages.logout,
                           width: 25.0,
                           height: 25.0,
                           color: Colors.white,
@@ -90,10 +87,10 @@ class HomePage extends StatelessWidget {
             Expanded(
               child: Container(
                 decoration: new BoxDecoration(
-                  image: new DecorationImage(
-                    image: new AssetImage("assets/images/flowers.jpg"),
+                  /*image: new DecorationImage(
+                    image: new AssetImage('assets/images/flowers.jpg'),
                     fit: BoxFit.cover,
-                  ),
+                  ),*/
                   border: Border(
                     bottom: BorderSide(
                         color: Colors.yellow,
@@ -116,17 +113,17 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Image(
-                          image: review,
+                          image: CommonImages.review,
                           width: 90.0,
                           height: 90.0,
-                          color: Color(0xFF1A9F4B),
+                          color: Colors.white,
                         ),
                         Text(
                           'Благодарность',
                           style: TextStyle(
                               fontSize: 35,
                               fontWeight: FontWeight.w300,
-                              color: Color(0xFF1A9F4B),
+                              color: Colors.white,
                               letterSpacing: 5),
                         ),
                       ],
@@ -138,11 +135,11 @@ class HomePage extends StatelessWidget {
             Expanded(
               child: Container(
                 decoration: new BoxDecoration(
-                  image: new DecorationImage(
+                  /*image: new DecorationImage(
                     image: new AssetImage(
-                        "assets/images/chicken_eggs_1728x800.jpg"),
+                        'assets/images/chicken_eggs_1728x800.jpg'),
                     fit: BoxFit.cover,
-                  ),
+                  ),*/
                   border: Border(
                     bottom: BorderSide(
                         color: Colors.yellow,
@@ -167,17 +164,17 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Image(
-                          image: egg,
+                          image: CommonImages.egg,
                           width: 90.0,
                           height: 90.0,
-                          color: Color(0xFF1A9F4B),
+                          color: Colors.white,
                         ),
                         Text(
                           'НЕидеальная полка',
                           style: TextStyle(
                               fontSize: 35,
                               fontWeight: FontWeight.w300,
-                              color: Color(0xFF1A9F4B),
+                              color: Colors.white,
                               letterSpacing: 5),
                         ),
                       ],
@@ -188,13 +185,13 @@ class HomePage extends StatelessWidget {
             ),
             Expanded(
               child: Container(
-                decoration: new BoxDecoration(
+                /*decoration: new BoxDecoration(
                   image: new DecorationImage(
                     image: new AssetImage(
-                        "assets/images/red_apple_between_green.jpg"),
+                        'assets/images/red_apple_between_green.jpg'),
                     fit: BoxFit.cover,
                   ),
-                ),
+                ),*/
                 child: ButtonTheme(
                   minWidth: double.infinity,
                   child: FlatButton(
@@ -212,17 +209,17 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Image(
-                          image: apple,
+                          image: CommonImages.apple,
                           width: 90.0,
                           height: 90.0,
-                          color: Color(0xFF1A9F4B),
+                          color: Colors.white,
                         ),
                         Text(
                           'Дефект продукта',
                           style: TextStyle(
                               fontSize: 35,
                               fontWeight: FontWeight.w300,
-                              color: Color(0xFF1A9F4B),
+                              color: Colors.white,
                               letterSpacing: 5),
                         ),
                       ],
@@ -262,7 +259,7 @@ class HomePage extends StatelessWidget {
                     textColor: Colors.white,
                     padding: EdgeInsets.all(10.0),
                     child: Image(
-                      image: mail,
+                      image: CommonImages.email,
                       width: 35.0,
                       height: 35.0,
                       color: Colors.white,

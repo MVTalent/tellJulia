@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:tell_julia/components/button/custom_outline_button.dart';
+import 'package:tell_julia/common/colors/common_colors.dart';
+import 'package:tell_julia/components/buttons/custom_outline_button.dart';
 import 'package:tell_julia/page/done_page.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -10,7 +10,7 @@ class RegisterPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 180),
-        color: Color(0xFF1A9F4B),
+        color: CommonColors.commonBackgroundColor,
         child: ListView(
           children: <Widget>[
             Container(
@@ -18,7 +18,7 @@ class RegisterPage extends StatelessWidget {
                 padding:
                     EdgeInsets.only(left: 40, right: 40, top: 20, bottom: 20),
                 child: Text(
-                  "Введите адрес своей электронной почты или своего номера телефона и мы вышлем Вам пароль для входа",
+                  'Введите адрес своей электронной почты или своего номера телефона и мы вышлем Вам пароль для входа',
                   style: TextStyle(
                     color: Colors.white,
                   ),
@@ -112,28 +112,17 @@ class RegisterPage extends StatelessWidget {
                   Expanded(
                     child: SizedBox(
                       height: 50,
-                      child: OutlineButton(
-                        child: Text("Зарегистрироваться",
-                            style: TextStyle(
-                                fontWeight: FontWeight.w700, fontSize: 18)),
-                        onPressed: () {
-                          SystemChannels.textInput
-                              .invokeMethod('TextInput.hide');
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => DonePage(
-                                message:
-                                "Спасибо, код доступа направлен на указанный адрес электронной почты/телефон",
-                              ),
-                            ),
-                          );
-                        },
-                        textColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0),
-                        ),
-                      ),
+                      child: CustomOutlineButton('ЗАРЕГИСТРИРОВАТЬСЯ', () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DonePage(
+                                  message:
+                                      'Спасибо, код доступа направлен на указанный адрес электронной почты/телефон',
+                                ),
+                          ),
+                        );
+                      }),
                     ),
                   ),
                 ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:tell_julia/common/colors/common_colors.dart';
+import 'package:tell_julia/components/buttons/custom_outline_button.dart';
 import 'package:tell_julia/page/done_page.dart';
 
 class RestorePage extends StatelessWidget {
@@ -10,7 +11,7 @@ class RestorePage extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 180),
-        color: Color(0xFF1A9F4B),
+        color: CommonColors.commonBackgroundColor,
         child: ListView(
           children: <Widget>[
             Container(
@@ -59,28 +60,17 @@ class RestorePage extends StatelessWidget {
                   Expanded(
                     child: SizedBox(
                       height: 50,
-                      child: OutlineButton(
-                        child: Text("Восстановить",
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w700)),
-                        onPressed: () {
-                          SystemChannels.textInput
-                              .invokeMethod('TextInput.hide');
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => DonePage(
-                                    message:
-                                        "Спасибо, новый код доступа направлен на указанный адрес электронной почты/телефон",
-                                  ),
-                            ),
-                          );
-                        },
-                        textColor: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0),
-                        ),
-                      ),
+                      child: CustomOutlineButton('ВОССТАНОВИТЬ', () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DonePage(
+                                  message:
+                                      'Спасибо, новый код доступа направлен на указанный адрес электронной почты/телефон',
+                                ),
+                          ),
+                        );
+                      }),
                     ),
                   ),
                 ],

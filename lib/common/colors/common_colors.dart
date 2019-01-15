@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CommonColors {
-  static const commonGreenColor = Color(0xFF1A9F4B);
+  //цвет фона для основного контейнера
+  static const commonBackgroundColor = Color(0xFF1A9F4B);
+
+  //цвет текста в OutlineButton кнопках
+  static const outlineButtonTextColor = Colors.white;
 }
