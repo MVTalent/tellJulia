@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-abstract class FeedbackPage {
+@deprecated
+abstract class FeedbackPage extends StatefulWidget {
 
-  Widget build(BuildContext context);
 }

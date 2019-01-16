@@ -8,7 +8,8 @@ class CustomOutlineButton extends StatelessWidget {
   //действие при нажатии кнопки
   final VoidCallback onPressed;
 
-  CustomOutlineButton(this.text, this.onPressed);
+  const CustomOutlineButton({Key key, this.text, this.onPressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

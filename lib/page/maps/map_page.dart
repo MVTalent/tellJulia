@@ -4,13 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong/latlong.dart';
 import 'package:location/location.dart';
+import 'package:tell_julia/common/colors/common_colors.dart';
 import 'package:tell_julia/page/feedback/feedback_info_page.dart';
 import 'package:tell_julia/page/feedback/feedback_page.dart';
 
 class MapPage extends StatefulWidget {
-  final FeedbackPage feedbackPage;
+  //final FeedbackPage feedbackPage;
 
-  const MapPage({Key key, this.feedbackPage}) : super(key: key);
+  //const MapPage({Key key, this.feedbackPage}) : super(key: key);
+  final String namePage;
+
+  const MapPage({Key key, @required this.namePage}) : super(key: key);
+
   @override
   _MapPageState createState() => _MapPageState();
 }
@@ -38,12 +43,12 @@ class _MapPageState extends State<MapPage> {
 
     initPlatformState();
 
-    _locationSubscription =
+    /*_locationSubscription =
         _location.onLocationChanged().listen((Map<String, double> result) {
       setState(() {
-        _currentLocation = result;
+        //_currentLocation = result;
       });
-    });
+    });*/
   }
 
   initPlatformState() async {
@@ -74,14 +79,13 @@ class _MapPageState extends State<MapPage> {
                   'Карта',
                   style: TextStyle(fontWeight: FontWeight.w300),
                 ),
-                backgroundColor: Colors.green),
+                backgroundColor: CommonColors.commonMainContainerColor),
             body: Stack(
               fit: StackFit.expand,
               children: <Widget>[
                 FlutterMap(
                   options: MapOptions(
-                      center: LatLng(_currentLocation['latitude'],
-                          _currentLocation['longitude']),
+                      center: LatLng(55.0, 50.0),
                       minZoom: 10.0),
                   layers: [
                     TileLayerOptions(
@@ -93,8 +97,7 @@ class _MapPageState extends State<MapPage> {
                         Marker(
                           width: 45.0,
                           height: 45.0,
-                          point: LatLng(_currentLocation['latitude'],
-                              _currentLocation['longitude']),
+                          point: LatLng(55.0, 50.0),
                           builder: (context) => Container(
                                 child: IconButton(
                                   icon: Icon(Icons.location_on),
@@ -124,7 +127,7 @@ class _MapPageState extends State<MapPage> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           padding: EdgeInsets.all(15.0),
-                          color: Colors.green,
+                          color: CommonColors.commonMainContainerColor,
                           child: Text(
                             'Пропустить',
                             style: TextStyle(
@@ -133,12 +136,16 @@ class _MapPageState extends State<MapPage> {
                                 fontWeight: FontWeight.w300),
                           ),
                           onPressed: () {
-                            Navigator.push(
+                            Navigator.of(context)
+                                .pushReplacementNamed(widget.namePage);
+                           /* Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => FeedbackInfoPage(feedbackPage: widget.feedbackPage),
+                                builder: (context) => FeedbackInfoPage(
+                                      feedbackPage: widget.feedbackPage,
+                                    ),
                               ),
-                            );
+                            );*/
                           },
                         ),
                       ),
@@ -149,21 +156,25 @@ class _MapPageState extends State<MapPage> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           padding: EdgeInsets.all(15.0),
-                          color: Colors.green,
+                          color: CommonColors.commonMainContainerColor,
                           child: Text(
                             'Подтвердить',
                             style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w300),
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w300,
+                            ),
                           ),
                           onPressed: () {
-                            Navigator.push(
+                            Navigator.of(context)
+                                .pushReplacementNamed(widget.namePage);
+                            /*Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => FeedbackInfoPage(feedbackPage: widget.feedbackPage),
+                                builder: (context) => FeedbackInfoPage(
+                                    feedbackPage: widget.feedbackPage),
                               ),
-                            );
+                            );*/
                           },
                         ),
                       ),
@@ -171,12 +182,11 @@ class _MapPageState extends State<MapPage> {
                   ),
                 ),
               ],
-            ));
+            ),
+          );
   }
 
-
   Widget feedbackBody() {
-
     return null;
   }
 }

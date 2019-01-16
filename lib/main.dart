@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:tell_julia/page/about_page.dart';
 import 'package:tell_julia/page/done_page.dart';
+import 'package:tell_julia/page/feedback/non_ideal_shelf_page.dart';
+import 'package:tell_julia/page/feedback/product_defect_page.dart';
+import 'package:tell_julia/page/feedback/thanks_page.dart';
 import 'package:tell_julia/page/home_page.dart';
 import 'package:tell_julia/page/auth/login_page.dart';
 import 'package:tell_julia/page/auth/register_page.dart';
@@ -36,6 +39,9 @@ class MyApp extends StatelessWidget {
         '/RestorePage': (BuildContext context) => RestorePage(),
         '/RegisterPage': (BuildContext context) => RegisterPage(),
         '/DonePage': (BuildContext context) => DonePage(message: ''),
+        '/ThanksPage': (BuildContext context) => ThanksPage(),
+        '/IncorrectShelfPage': (BuildContext context) => IncorrectShelfPage(),
+        '/ProductDefectPage': (BuildContext context) => ProductDefectPage(),
       },
     );
   }

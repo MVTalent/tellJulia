@@ -18,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 30),
-        color: CommonColors.commonBackgroundColor,
+        color: CommonColors.commonMainContainerColor,
         child: ListView(
           children: <Widget>[
             Container(
@@ -106,9 +106,12 @@ class _LoginPageState extends State<LoginPage> {
                   Expanded(
                     child: SizedBox(
                       height: 50,
-                      child: CustomOutlineButton('ВОЙТИ', () {
-                        Navigator.of(context).pushReplacementNamed('/HomePage');
-                      }),
+                      child: CustomOutlineButton(
+                          text: 'ВОЙТИ',
+                          onPressed: () {
+                            Navigator.of(context)
+                                .pushReplacementNamed('/HomePage');
+                          }),
                     ),
                   ),
                 ],

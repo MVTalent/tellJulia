@@ -11,7 +11,7 @@ class RestorePage extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 180),
-        color: CommonColors.commonBackgroundColor,
+        color: CommonColors.commonMainContainerColor,
         child: ListView(
           children: <Widget>[
             Container(
@@ -60,17 +60,19 @@ class RestorePage extends StatelessWidget {
                   Expanded(
                     child: SizedBox(
                       height: 50,
-                      child: CustomOutlineButton('ВОССТАНОВИТЬ', () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DonePage(
-                                  message:
-                                      'Спасибо, новый код доступа направлен на указанный адрес электронной почты/телефон',
-                                ),
-                          ),
-                        );
-                      }),
+                      child: CustomOutlineButton(
+                          text: 'ВОССТАНОВИТЬ',
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DonePage(
+                                      message:
+                                          'Спасибо, новый код доступа направлен на указанный адрес электронной почты/телефон',
+                                    ),
+                              ),
+                            );
+                          }),
                     ),
                   ),
                 ],

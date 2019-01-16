@@ -12,7 +12,7 @@ class DonePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: CommonColors.commonBackgroundColor,
+        color: CommonColors.commonMainContainerColor,
         child: ListView(
           children: <Widget>[
             /* Container(
@@ -24,7 +24,8 @@ class DonePage extends StatelessWidget {
             Container(
               padding: EdgeInsets.only(top: 100, bottom: 30),
               child: Center(
-                child: Image(image: CommonImages.woman, width: 150.0, height: 150.0),
+                child: Image(
+                    image: CommonImages.woman, width: 150.0, height: 150.0),
               ),
             ),
             Container(
@@ -57,10 +58,12 @@ class DonePage extends StatelessWidget {
                   Expanded(
                     child: SizedBox(
                       height: 50,
-                      child: CustomOutlineButton('ГОТОВО', () {
-                        Navigator.of(context)
-                            .pushReplacementNamed('/LoginPage');
-                      }),
+                      child: CustomOutlineButton(
+                          text: 'ГОТОВО',
+                          onPressed: () {
+                            Navigator.of(context)
+                                .pushReplacementNamed('/LoginPage');
+                          }),
                     ),
                   ),
                 ],

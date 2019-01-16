@@ -10,7 +10,7 @@ class RegisterPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: EdgeInsets.only(top: 180),
-        color: CommonColors.commonBackgroundColor,
+        color: CommonColors.commonMainContainerColor,
         child: ListView(
           children: <Widget>[
             Container(
@@ -112,17 +112,19 @@ class RegisterPage extends StatelessWidget {
                   Expanded(
                     child: SizedBox(
                       height: 50,
-                      child: CustomOutlineButton('ЗАРЕГИСТРИРОВАТЬСЯ', () {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DonePage(
-                                  message:
-                                      'Спасибо, код доступа направлен на указанный адрес электронной почты/телефон',
-                                ),
-                          ),
-                        );
-                      }),
+                      child: CustomOutlineButton(
+                          text: 'ЗАРЕГИСТРИРОВАТЬСЯ',
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DonePage(
+                                      message:
+                                          'Спасибо, код доступа направлен на указанный адрес электронной почты/телефон',
+                                    ),
+                              ),
+                            );
+                          }),
                     ),
                   ),
                 ],
