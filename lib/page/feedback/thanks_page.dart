@@ -22,20 +22,13 @@ class _ThanksPageState extends State<ThanksPage> {
     });
   }
 
-  File _image;
-
-  Future _getCameraImage() async {
-    File image = await ImagePicker.pickImage(source: ImageSource.camera);
-    setState(() {
-      _fileList.add(image);
-    });
-  }
-
-  Future _getGalleryImage() async {
-    File image = await ImagePicker.pickImage(source: ImageSource.gallery);
-    setState(() {
-      _fileList.add(image);
-    });
+  void _getImage(ImageSource imageSource) async {
+    File image = await ImagePicker.pickImage(source: imageSource);
+    if (image != null) {
+      setState(() {
+        _fileList.add(image);
+      });
+    }
   }
 
   @override
@@ -76,7 +69,7 @@ class _ThanksPageState extends State<ThanksPage> {
                 SizedBox(
                   height: 70,
                   child: OutlineButton(
-                    onPressed: _getCameraImage,
+                    onPressed: () => _getImage(ImageSource.camera),
                     shape: CircleBorder(),
                     child: Icon(
                       Icons.camera_alt,
@@ -88,7 +81,7 @@ class _ThanksPageState extends State<ThanksPage> {
                 SizedBox(
                   height: 70,
                   child: OutlineButton(
-                    onPressed: _getGalleryImage,
+                    onPressed: () => _getImage(ImageSource.gallery),
                     shape: CircleBorder(),
                     child: Icon(
                       Icons.attach_file,
@@ -101,19 +94,28 @@ class _ThanksPageState extends State<ThanksPage> {
             ),
             Container(
               height: 200,
+              color: Colors.white,
               child: _fileList.length == 0
-                ? Text('No image selected.')
-                : ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: _fileList.length,
-              itemBuilder: (context, index) {
-                return Container(
-                  width: 100,
-                  child: IconButton(icon: Image.file(_fileList[index]), onPressed: () {print('click image');}),
-                );
-              },
-            ),)
-
+                  ? Text('Нет прикрпеленных фото')
+                  : ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: _fileList.length,
+                      itemBuilder: (context, index) {
+                        return Container(
+                          width: 100,
+                          child: FlatButton(
+                            onPressed: null,
+                            child: IconButton(
+                                icon: Image.file(_fileList[index]),
+                                onPressed: () {
+                                  print('click image');
+                                }),
+                            shape: CircleBorder(),
+                          ), //IconButton(icon: Image.file(_fileList[index]), onPressed: () {print('click image');}),
+                        );
+                      },
+                    ),
+            )
           ],
         ),
       ),
